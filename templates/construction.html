@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BoardBazaar | در دست ساخت</title>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/premade.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://maxcdn.icons8.com/fonts/line-awesome/1.1/css/line-awesome-font-awesome.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+</head>
+
+
+
+
+<body>
+    <!-- <div id="loading-screen">
+        <div class="loading-screen-wrapper">
+            <div class="welcome-title" style="width: 100%;">
+                <h2> بردبازار   </h2>
+                <hr class="line">
+            </div>
+            
+            <div class="dice"> 
+  
+                <div class="face first-face">
+                  <div class="dot"></div>  
+                </div>
+                
+                <div class="face second-face">
+                  <div class="dot"></div>  
+                  <div class="dot"></div>  
+                </div>
+                
+                <div class="face third-face">
+                  <div class="dot"></div>  
+                  <div class="dot"></div>
+                  <div class="dot"></div>
+                </div>
+                
+                <div class="face fourth-face">
+                  <div class="column">
+                    <div class="dot"></div>  
+                    <div class="dot"></div>  
+                  </div>
+                  <div class="column">
+                    <div class="dot"></div>  
+                    <div class="dot"></div>  
+                  </div>    
+                </div>
+                
+                <div class="face fifth-face">
+                  <div class="column" >
+                    <div class="dot"></div>  
+                    <div class="dot"></div>  
+                  </div>
+                  <div class="column">
+                    <div class="dot"></div>
+                  </div>
+                  <div class="column" >
+                    <div class="dot"></div>  
+                    <div class="dot"></div>  
+                  </div>    
+                </div>
+                
+                <div class="face sixth-face">
+                  <div class="column">
+                    <div class="dot"></div>  
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                  </div>
+                  <div class="column">
+                    <div class="dot"></div>  
+                    <div class="dot"></div>  
+                    <div class="dot"></div>
+                  </div>    
+                </div>
+                
+              </div>
+              
+            <div class="welcome-pr" id="loading-tip">
+                <p id="tip-text" style="text-align: center;">این یک آزمایش است.</p>
+            </div>
+        </div>
+        
+    </div> -->
+
+    <header>
+        <nav>
+            
+            <img class="nav-left" src="images/left.png" alt="">
+            <img class="nav-right" src="images/right.png" alt="">
+            
+            <a href="index.html"><img class="navbar-logo" src="images/logo/logo-inline.png"></a>
+
+            <div class="search-box">
+                <div class="search-icon"><i class="fa fa-search search-icon"></i></div>
+                <form action="" class="search-form">
+                  <input type="text" placeholder="اینجا بگرد..." id="search" autocomplete="off">
+                </form>
+                <svg class="search-border" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/" x="0px" y="0px" viewBox="0 0 671 111" style="enable-background:new 0 0 671 111;"
+                 xml:space="preserve">
+                    <path class="border" d="M335.5,108.5h-280c-29.3,0-53-23.7-53-53v0c0-29.3,23.7-53,53-53h280"/>
+                    <path class="border" d="M335.5,108.5h280c29.3,0,53-23.7,53-53v0c0-29.3-23.7-53-53-53h-280"/>
+                  </svg>
+                <div class="go-icon"><i class="fa fa-arrow-right"></i></div>
+            </div>
+
+            <div class="navbar-links">
+                <!-- <a class="button-74" href="cards.html">حمایت شما</a>
+
+                <a class="button-74" href="cards.html">درباره من</a> -->
+
+                <a href="construction.html" class="button-74" >انجمن ها</a>
+
+                <a href="construction.html" class="button-74" >فروشگاه ها</a>
+
+                <a href="deals.html" class="button-74" >آگهی ها</a>
+
+                <a href="index.html" class="button-74" >خانه</a>
+
+                
+                <!-- if not logged in
+                <div class="dropdown-toggle button-74 user-box">
+                    <img src="images/default_profile.png" alt="">
+                    <p>وارد شوید</p>
+                </div>
+
+                <div class="dropdown-menu">
+                    <a href="#" class="button-74">ثبت نام</a>
+                    <a href="#" class="button-74"> </a>
+                    <a href="#" class="button-74">ایجاد مزایده</a>
+                    <a href="#" class="button-74">ایجاد فروشگاه</a>
+                    <a href="#" class="button-74">واسم یه قهوه بخر</a>
+                    <a href="#" class="button-74">خروج</a>
+                </div>
+                
+                -->
+                <div class="dropdown-toggle">
+                    
+                    <div class="button-74 user-box">
+                        <img src="images/photo_2022-05-31_11-34-33.jpg" alt="">
+                        <p>داشبورد</p>
+                    </div>
+
+                    <div class="dropdown-menu">
+                        <a href="profile.html" class="button-74">پروفایل</a>
+                        <a href="create.html" class="button-74">ایجاد آگهی</a>
+                        <a href="create-auc.html" class="button-74">ایجاد مزایده</a>
+                        <a href="construction.html" class="button-74">ایجاد فروشگاه</a>
+                        <a href="construction.html" class="button-74">واسم یه قهوه بخر</a>
+                        <a href="login.html" class="button-74">خروج</a>
+                    </div> 
+                </div>
+            
+            </div>
+            <div class="sidebar">
+                <!-- Sidebar content here -->
+                <img class="sidebar-header" src="images/sidebar-header.png" alt="">
+                <button class="button-74 slidebar-cross sidebar-toggle "><i class="gg-close"></i></button>
+                <div class="slidebar-links">
+
+                    <div class="dropdown-toggle">
+
+                        <div class="button-74 user-box">
+                            <img src="images/photo_2022-05-31_11-34-33.jpg" alt="">
+                            <h4>داشبورد</h4>
+                        </div>
+
+                        <div class="dropdown-menu">
+                            <a href="profile.html" class="button-74">پروفایل</a>
+                            <a href="create.html" class="button-74">ایجاد آگهی</a>
+                            <a href="create-auc.html" class="button-74">ایجاد مزایده</a>
+                            <a href="construction.html" class="button-74">ایجاد فروشگاه</a>
+                            <a href="construction.html" class="button-74">واسم یه قهوه بخر</a>
+                            <a href="login.html" class="button-74">خروج</a>
+                        </div> 
+                    </div>
+                    
+                    <div class="other-links">
+                        <a href="index.html" class="button-74" >خانه</a>
+                        <a href="deals.html" class="button-74" >آگهی ها</a>
+                        <a href="construction.html" class="button-74" >انجمن ها</a>
+                        <a href="construction.html" class="button-74" >فروشگاه ها</a>
+                        <a href="construction.html" class="button-74" >حمایت شما</a>
+                        <a href="construction.html" class="button-74" >درباره من</a>
+
+                    </div>
+                    
+                </div>
+                
+                <div class="sidebar-footer">
+                    <img class="" src="images/sidebar-footer.png" alt="">
+                </div>
+                
+            </div>
+            
+            <button class="button-74 sidebar-toggle"><i class="gg-menu"></i></button>
+            
+
+        </nav>
+    </header>
+    <main>
+        
+        <div class="welcome" style=" display: flex; justify-content: center; align-items: center; flex-direction: column;">
+            <img class="welcome-right" src="images/welcome.png" alt="">
+            <img class="welcome-left" src="images/welcome.png" alt="">
+            <div class="welcome-title">
+                <h2>این بخش در دست ساخت است</h2>
+                <hr class="line">
+            </div>
+            <p>در تلاش هستم به زودی این قسمت رو در دسترس قرار بدم.</p>
+            <p>ممنون از شکیباییتون :)</p>
+            
+        </div>
+        <div class="under-construction">
+            <img src="images/shraded-code.png" alt="">
+        </div>
+    </main>
+
+    <script src="js/navbar.js"></script>
+</body>
+</html>

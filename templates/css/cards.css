@@ -1,0 +1,332 @@
+
+/* imports */
+@import url("./base.css");
+
+:root {
+    --primary-color: #ffead2;
+    --red-color: #e73656;
+    --blue-color: #00adb2;
+    --yellow-color: #ff9d00;
+    --text-color: #293340;
+  }
+.container{
+    margin: 50px auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 90%;
+    gap: 30px;
+}
+.card{
+    position: relative;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 250px;
+    height: 500px;
+    overflow: hidden;
+
+    background-color: var(--primary-color);
+    border-radius: 14px ;
+    border: 2px solid var(--red-color);
+    box-shadow: #505357 0px 0px 15px;
+}
+.card .image-holder{
+    width: 100%;
+    height: 250px;
+    position: relative;
+    overflow: hidden;
+
+}
+.card .image-holder img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 250px;
+    object-fit: cover; 
+    border-radius: 12px; 
+    opacity: 0; 
+    transition: opacity 0.5s ease; 
+}
+.image-holder img.active {
+    opacity: 1; 
+    
+  }
+  
+.usernamebox{
+    position: absolute;
+    top: 49%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: fit-content;
+    height: 32px;
+    backdrop-filter: blur(3px);
+    background: rgba(68, 68, 68, 0.5);
+    box-shadow: var(--red-color) 0px 0px 15px 3px ;
+    padding: 10px;
+    border-radius: 12px;
+    border: 2px solid var(--red-color);
+
+    color: aliceblue;
+    font-weight: bold;
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    z-index: 2;
+    transition: box-shadow 0.3s ease;
+    transition: scale 0.3s ease;
+}
+.usernamebox:hover{
+    
+    scale: 1.03;
+    box-shadow: var(--red-color) 0px 0px 15px 5px ;
+}
+.card .titlebox {
+    margin-top: 15px;
+    height: 35px;
+    text-align: center;
+    overflow: hidden;
+  }
+  
+  .card .titlebox p {
+    width: calc(100% - 20px); 
+    white-space: nowrap; 
+    overflow: hidden; 
+    text-overflow: ellipsis;
+    display: inline-block;
+    line-height: 35px; 
+    vertical-align: middle;
+    transition: transform 0.3s ease; 
+  }
+  
+  .card .titlebox p.scrolling:hover {
+    overflow: visible;
+    animation: scrollText 7s linear infinite;
+  }
+  
+  @keyframes scrollText {
+    from { transform: translateX(0); }
+    to { transform: translateX(180%); }
+  }
+  
+  .card .titlebox p:not(:hover) {
+    transform: none;
+    transition: none;
+  }
+  
+.card hr{
+    margin: 5px auto;
+    width: 70%;
+    color: var(--red-color);
+    background-color: var(--red-color);
+    border-color: var(--red-color);    
+    box-shadow: var(--red-color) 0px 0px 15px 1px ;
+}
+.card .descriptionbox{
+    width: 100%;
+    height: 75px;
+    font-size: 13px;
+    overflow: auto;    
+    padding-left:10px;
+    padding-right: 10px;
+    scrollbar-width: none;
+    overflow: -moz-scrollbars-none; 
+    -ms-overflow-style: none; 
+    overflow-y: scroll;
+}
+
+.card .descriptionbox::-webkit-scrollbar{
+    display: none;
+}
+
+.card .details-bar{
+    font-size: 14px;
+    padding: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+.card .details-bar .date{
+    color: #717171;
+}
+.card .types{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+.card .details-bar .type{
+    padding: 5px;
+    color:var(--red-color);
+    border: 2px solid var(--red-color);
+    border-radius: 10px;
+    box-shadow: var(--red-color) 0px 0px 5px ;
+
+}
+.card .pricebox{
+    overflow: hidden;
+    padding-top: 7px;
+    position: absolute;
+    bottom: 0;
+    background-color: var(--red-color);
+    box-shadow: var(--red-color) 0px 0px 10px ;
+    color: aliceblue;
+    width: 100%;
+    height: 55px;
+    font-weight: bolder;
+    font-size: large;
+    border-radius: 12px;
+    transition: height 1s ease;
+    z-index: 2;
+}
+.quantity{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.card .pricebox .header{
+    padding: 1px 15px 15px 15px;
+    height: 55px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.card .pricebox .body{
+    padding: 1px 15px 15px 15px;
+    margin-top: 5px;
+    color: #293340;
+    width: 100%;
+    height: 92px;
+    overflow: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: right;
+    gap: 5px;
+    scrollbar-width: none;
+    overflow: -moz-scrollbars-none; /* Older Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+    overflow-y: scroll;
+}
+.card .pricebox .body::-webkit-scrollbar{
+    display: none;
+}
+.card .pricebox .body .game{
+    padding: 0px 4px;
+    background-color: aliceblue;
+    width: fit-content;
+    height: fit-content;
+    opacity: 0.5;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    font-size: small;
+
+}
+.card .pricebox .details-button{
+    margin-top: auto;
+    color: var(--red-color);
+    background-color:var(--primary-color);
+    width: 100%;
+    height: 30px;
+    border-radius: 13px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.5s ease, font-size 0.5s ease; 
+    
+}
+.card .pricebox .details-button:hover{
+    background-color: rgb(255, 255, 255);
+    font-size: 20px;
+}
+.card .pricebox:hover{
+
+    height: 190px;
+    
+}
+
+/* BIG */
+.big{
+    max-width: 530px;
+}
+
+/* colors */
+.yellow-theme {
+    border: 2px solid var(--yellow-color); 
+}
+
+.yellow-theme .usernamebox {
+    box-shadow: var(--yellow-color) 0px 0px 15px 3px; 
+    border: 2px solid var(--yellow-color);
+}
+
+.yellow-theme .pricebox {
+    background-color: var(--yellow-color); 
+    box-shadow: var(--yellow-color) 0px 0px 10px;
+}
+.yellow-theme hr{
+    width: 70%;
+    color: var(--yellow-color);
+    background-color: var(--yellow-color);
+    border-color: var(--yellow-color);
+    
+    box-shadow: var(--yellow-color) 0px 0px 15px 1px ;
+}
+.yellow-theme .usernamebox:hover{
+    
+    scale: 1.03;
+    box-shadow: var(--yellow-color) 0px 0px 15px 5px ;
+}
+.yellow-theme .details-bar .type{
+    padding: 5px;
+    color:var(--yellow-color);
+    border: 2px solid var(--yellow-color);
+    border-radius: 10px;
+    box-shadow: var(--yellow-color) 0px 0px 10px ;
+
+}
+.yellow-theme .pricebox .details-button{
+    color: var(--yellow-color);
+}
+
+/* blue */
+.blue-theme {
+    border: 2px solid var(--blue-color); 
+}
+
+.blue-theme .usernamebox {
+    box-shadow: var(--blue-color) 0px 0px 15px 3px; 
+    border: 2px solid var(--blue-color);
+}
+
+.blue-theme .pricebox {
+    background-color: var(--blue-color); 
+    box-shadow: var(--blue-color) 0px 0px 10px;
+}
+.blue-theme hr{
+    width: 70%;
+    color: var(--blue-color);
+    background-color: var(--blue-color);
+    border-color: var(--blue-color);
+    box-shadow: var(--blue-color) 0px 0px 15px 1px ;
+}
+.blue-theme .usernamebox:hover{
+    
+    scale: 1.03;
+    box-shadow: var(--blue-color) 0px 0px 15px 5px ;
+}
+.blue-theme .details-bar .type{
+    padding: 5px;
+    color:var(--blue-color);
+    border: 2px solid var(--blue-color);
+    border-radius: 10px;
+    box-shadow: var(--blue-color) 0px 0px 10px ;
+
+}
+.blue-theme .pricebox .details-button{
+    color: var(--blue-color);
+}

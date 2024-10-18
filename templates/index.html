@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8" dir="rtl">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BoardBazaar</title>
+    
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/premade.css">
+    <link rel="stylesheet" href="css/cards.css">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- search box -->
+    <link rel="stylesheet" href="https://maxcdn.icons8.com/fonts/line-awesome/1.1/css/line-awesome-font-awesome.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+</head>
+<body>
+ 
+    <header>
+        <nav>
+            
+            <img class="nav-left" src="images/left.png" alt="">
+            <img class="nav-right" src="images/right.png" alt="">
+            
+            <a href="index.html"><img class="navbar-logo" src="images/logo/logo-inline.png"></a>
+
+            <div class="search-box">
+                <div class="search-icon"><i class="fa fa-search search-icon"></i></div>
+                <form action="" class="search-form">
+                  <input type="text" placeholder="اینجا بگرد..." id="search" autocomplete="off">
+                </form>
+                <svg class="search-border" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/" x="0px" y="0px" viewBox="0 0 671 111" style="enable-background:new 0 0 671 111;"
+                 xml:space="preserve">
+                    <path class="border" d="M335.5,108.5h-280c-29.3,0-53-23.7-53-53v0c0-29.3,23.7-53,53-53h280"/>
+                    <path class="border" d="M335.5,108.5h280c29.3,0,53-23.7,53-53v0c0-29.3-23.7-53-53-53h-280"/>
+                  </svg>
+                <div class="go-icon"><i class="fa fa-arrow-right"></i></div>
+            </div>
+
+            <div class="navbar-links">
+                <!-- <a class="button-74" href="cards.html">حمایت شما</a>
+
+                <a class="button-74" href="cards.html">درباره من</a> -->
+
+                <a href="construction.html" class="button-74" >انجمن ها</a>
+
+                <a href="construction.html" class="button-74" >فروشگاه ها</a>
+
+                <a href="deals.html" class="button-74" >آگهی ها</a>
+
+                <a href="index.html" class="button-74" >خانه</a>
+
+                
+                <!-- if not logged in
+                <div class="dropdown-toggle button-74 user-box">
+                    <img src="images/default_profile.png" alt="">
+                    <p>وارد شوید</p>
+                </div>
+
+                <div class="dropdown-menu">
+                    <a href="#" class="button-74">ثبت نام</a>
+                    <a href="#" class="button-74"> </a>
+                    <a href="#" class="button-74">ایجاد مزایده</a>
+                    <a href="#" class="button-74">ایجاد فروشگاه</a>
+                    <a href="#" class="button-74">واسم یه قهوه بخر</a>
+                    <a href="#" class="button-74">خروج</a>
+                </div>
+                
+                -->
+                <div class="dropdown-toggle">
+                    
+                    <div class="button-74 user-box">
+                        <img src="images/photo_2022-05-31_11-34-33.jpg" alt="">
+                        <p>داشبورد</p>
+                    </div>
+
+                    <div class="dropdown-menu">
+                        <a href="profile.html" class="button-74">پروفایل</a>
+                        <a href="create.html" class="button-74">ایجاد آگهی</a>
+                        <a href="create-auc.html" class="button-74">ایجاد مزایده</a>
+                        <a href="construction.html" class="button-74">ایجاد فروشگاه</a>
+                        <a href="construction.html" class="button-74">واسم یه قهوه بخر</a>
+                        <a href="login.html" class="button-74">خروج</a>
+                    </div> 
+                </div>
+            
+            </div>
+            <div class="sidebar">
+                <!-- Sidebar content here -->
+                <img class="sidebar-header" src="images/sidebar-header.png" alt="">
+                <button class="button-74 slidebar-cross sidebar-toggle "><i class="gg-close"></i></button>
+                <div class="slidebar-links">
+
+                    <div class="dropdown-toggle">
+
+                        <div class="button-74 user-box">
+                            <img src="images/photo_2022-05-31_11-34-33.jpg" alt="">
+                            <h4>داشبورد</h4>
+                        </div>
+
+                        <div class="dropdown-menu">
+                            <a href="profile.html" class="button-74">پروفایل</a>
+                            <a href="create.html" class="button-74">ایجاد آگهی</a>
+                            <a href="create-auc.html" class="button-74">ایجاد مزایده</a>
+                            <a href="construction.html" class="button-74">ایجاد فروشگاه</a>
+                            <a href="construction.html" class="button-74">واسم یه قهوه بخر</a>
+                            <a href="login.html" class="button-74">خروج</a>
+                        </div> 
+                    </div>
+                    
+                    <div class="other-links">
+                        <a href="index.html" class="button-74" >خانه</a>
+                        <a href="deals.html" class="button-74" >آگهی ها</a>
+                        <a href="construction.html" class="button-74" >انجمن ها</a>
+                        <a href="construction.html" class="button-74" >فروشگاه ها</a>
+                        <a href="construction.html" class="button-74" >حمایت شما</a>
+                        <a href="construction.html" class="button-74" >درباره من</a>
+
+                    </div>
+                    
+                </div>
+                
+                <div class="sidebar-footer">
+                    <img class="" src="images/sidebar-footer.png" alt="">
+                </div>
+                
+            </div>
+            
+            <button class="button-74 sidebar-toggle"><i class="gg-menu"></i></button>
+            
+
+        </nav>
+    </header>
+    <main>
+        <section class="hero">
+            <div class="deal-banner b1">
+                <img class="animated-img active" src="images/card examples/TS_buyer.png" alt="">
+                <img class="animated-img" src="images/card examples/TI4_seller.png" alt="">
+                <img class="animated-img" src="images/card examples/arknova_buyer.png" alt="">
+                <img class="animated-img" src="images/card examples/brass_seller.png" alt="">
+                <img class="animated-img" src="images/card examples/root_buyer.png" alt="">
+                <img class="animated-img" src="images/card examples/scythe_seller.png" alt="">
+                
+            </div>
+
+            <div class="middle-banner animated-img">
+                <div class="middle-banner-frame1"></div>
+                <div class="middle-banner-frame2"></div>
+                
+                <div class="hero-title">
+                    <h2 class="letter">بر</h2>
+                    <h2 class="letter">د</h2>
+                    <h2 class="letter">با</h2>
+                    <h2 class="letter">ز</h2>
+                    <h2 class="letter">ا</h2>
+                    <h2 class="letter">ر</h2>
+                </div>
+
+                <div class="sell-olds" id="sellOlds">
+                    <h4 class="letter">قد</h4>
+                    <h4 class="letter">یمیا</h4>
+                    <h4 class="letter">ر</h4>
+                    <h4 class="letter">و</h4>
+                    <h4 class="letter"> </h4>
+                    <h4 class="letter">بفر</h4>
+                    <h4 class="letter">و</h4>
+                    <h4 class="letter">ش</h4>
+                    <h4 class="letter">.</h4>
+                    <h4 class="letter">.</h4>
+                    <h4 class="letter">.</h4>
+                </div>
+
+                <div class="buy-new" id="buyNew">
+                    <h4 class="letter">جد</h4>
+                    <h4 class="letter">ید</h4>
+                    <h4 class="letter"> </h4>
+                    <h4 class="letter">بخر</h4>
+                    <h4 class="letter">!</h4>
+                    <h4 class="letter">!</h4>
+                    <h4 class="letter">!</h4>
+                </div>
+                <div class="arrow-box">
+                    <img class="red-arrow" src="images/red_arrow.png" alt="" id="redArrow">
+                    <img class="blue-arrow" src="images/blue_arrow.png" alt="" id="blueArrow">
+                </div>
+                
+
+            </div>
+
+            <div class="deal-banner b2">
+                <img class="animated-img active" src="images/card examples/TS_seller.png" alt="">
+                <img class="animated-img" src="images/card examples/TI4_buyer.png" alt="">
+                <img class="animated-img" src="images/card examples/arknova_seller.png" alt="">
+                <img class="animated-img" src="images/card examples/brass_buyer.png" alt="">
+                <img class="animated-img" src="images/card examples/root_seller.png" alt="">
+                <img class="animated-img" src="images/card examples/scythe_buyer.png" alt="">
+                
+            </div>
+        </section>
+        <section class="welcome">
+            <img class="welcome-right" src="images/welcome.png" alt="">
+            <img class="welcome-left" src="images/welcome.png" alt="">
+
+            <div class="welcome-title">
+                <h2>به بردبازار خوش اومدی . . .</h2>
+                <hr class="line">
+            </div>
+            
+            <div class="welcome-pr">
+                <p>به بردبازار خوش اومدی، مقصد نهایی برای خرید و فروش بازی‌های رومیزی تو ایران. <br>
+                همینطور یه فضا برای بحث و گفتگو حوزه بردگیم و پیدا کردن چندتا همبازی. 
+                چه دنبال پیدا کردن یه بازی جدید با قیمت کمتر باشی
+                و چه بخوای بازی‌هایی که از ازشون خسته شدی رو بفروشی
+                و یا حتی دنبال چندتا دوست برای یه گیم نایت هیجان انگیزی,<br>
+                <span style="font-family: 'digi-lalezar'; font-size: 27px;" >بردبازار</span> اینجاست تا تورو به علاقه مندای بازی‌های رومیزی در سراسر کشور وصل کنه.</p>
+            </div>
+
+            <div class="stats">
+                <div class="buy-orders-count">
+                    <h1>١٢٠٠+</h1>
+                    <h3>درخواست خرید</h3>
+                </div>
+                
+                <div class="sell-orders-count">
+                    <h1>٣٤٠٠+</h1>
+                    <h3>آگهی فروش</h3>
+                </div>
+
+                
+                <div class="user-count">
+                    <h1>٥٠٠+</h1>
+                    <h3>کاربر فعال</h3>
+                </div>
+                
+            </div>
+            
+
+        </section>
+        <section class="why">
+            <div class="welcome-title">
+                <h2>چرا بردبازار؟!</h2>
+                <hr class="line">
+            </div>
+            <div class="welcome-pr">
+                <p>
+                    سختی های واردات بردگیم... هزینه زیاد بازی های آکبند... و از همه بدتر تکراری شدن بازی های قدیمی...
+                    همه اینا باعث شده که بازار بازی های دست دوم توی ایران داغ تر از هر کشور دیگه ای بشه.
+                    بردبازار اولین پلتفرم ارتباطی علاقه مندان بردگیم در جهت ایجاد مکانی امن و مجهز
+                    برای بازار بازی های دست دوم و فضایی اجتماعی برای طرفداران  حوزه بردگیم در ایران امکانات زیر رو فراهم کرده.
+                </p>
+            </div>
+            <!-- NOTE to use a reverse card place elements like this : IMAGE FILLER TEXT. else : TEXT FILLER IMAGE -->
+            <div class="why-card">
+                <div class="why-back"></div>
+                <div class="why-text">
+                    <div class="why-title">
+                        <h2>بازی های قدیمیتو بفروش</h2>
+                    </div>
+                    <div class="why-pr">
+                        <!-- NOTE! no more than 200 char. -->
+                        <p>
+                            بازی‌ای داری که آماده ای ازش جدا شی؟ به راحتی یه آگهی برای فروش بازیت ایجاد کن. تا بازیت اینجا به راحتی توسط کسایی که دنبالش میگردن دیده بشه. اینجا با تبلیغاتی که واسه آگهی های شما انجام میشه , سریع تر از هر جای دیگه ای میتونی بازیتو بفروشی.
+                        </p>                        
+                    </div>
+                </div>
+                <div class="image-filler"></div>
+    
+                <div class="why-img">
+                    <img src="images/card examples/TS_seller.png" alt="" class="animated-img">
+                </div>
+            </div>
+
+            <div class="why-card why-reverse why-card-blue">
+                <div class="why-back"></div>
+                <div class="why-img">
+                    <img src="images/card examples/TS_buyer.png" alt="" class="animated-img">
+                </div>
+                <div class="image-filler"></div>
+                <div class="why-text">
+                    <div class="why-title">
+                        <h2>بازی جدید بخر</h2>
+                    </div>
+                    <div class="why-pr">
+                        <!-- NOTE! no more than 200 char. -->
+                        <p>
+                            دنبال یه بازی خاص میگردی اما شک داری بتونی پیداش کنی؟! اینجا یه آگهی بزار تا همه بدونن چی لازم داری. تمام کسایی که میخوان بازیشونو بفروشن حتما قبلش یه سر به درخواستای شما میزنن و همه میدونن دنبال چه بازی میگردی.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="why-card why-card-yellow">
+                <div class="why-back"></div>
+                <div class="why-text">
+                    <div class="why-title">
+                        <h2>مزایده شروع کن!</h2>
+                    </div>
+                    <div class="why-pr">
+                        <!-- NOTE! no more than 200 char. -->
+                        <p>
+                            نمیدونی قیمت بازی هات چنده؟! شک داری ارزون میفروشی؟! میتونی بازی هات رو به مزایده بزاری تا به بالاترین قیمت پیشنهادی بفروشیشون. مزایده ها اینجا باعث میشن تا اطمینان پیددا کنی بازیتو به بالاترین قیمت میفروشی. همینطور خودت میتونی بازی های زیادی رو با قیمت کم بخری.
+                        </p>
+                    </div>
+                </div>
+                <div class="image-filler"></div>
+    
+                <div class="why-img">
+                    <img src="images/card examples/auction.png" alt="" class="animated-img">
+                </div>
+            </div>
+           <!-- THIS PART IS HARD CODED FOR COMING SOON PURPOSES -->
+            <div class="why-card why-reverse why-card-dark" >
+                <div class="why-back"></div>
+                <div class="why-img">
+                    <img src="images/coming-soon.png" alt="">
+                </div>
+                <div class="image-filler"></div>
+                <div class="why-text">
+                    <div class="why-title">
+                        <h2 style="color: bisque;">فروشگاه خودتو اینجا بزن!</h2>
+                    </div>
+                    <div class="why-pr">
+                        <!-- NOTE! no more than 200 char. -->
+                        <p style="color: bisque;">
+                            یه بستر آنلاین آماده در اختیار هرکسی که دوست داره فروش آنلاین و خودکار در کنار ما داشته باشه و محصولاتش اینجا برای کسایی که نیازش دارن دیده بشه. 
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="why-card why-card-dark" >
+                <div class="why-back"></div>
+                <div class="why-text">
+                    <div class="why-title">
+                        <h2 style="color: bisque;">انجمن و  تالار های گفتگو...</h2>
+                    </div>
+                    <div class="why-pr">
+                        <!-- NOTE! no more than 200 char. -->
+                        <p style="color: bisque;">
+                            یه سوال درباره یه بازی خاص داری؟! یا میخوای درباره یه بازی بحث کنی؟! اینجا میتونی یه انجمن مخصوص درباره یه موضوع یا یه بازی درست کنی یا خودت عضو یکی از این انجمن ها بشی تا با بقیه شروع به صحبت کنی.
+                        </p>
+                    </div>
+                </div>
+                <div class="image-filler"></div>
+    
+                <div class="why-img">
+                    <img src="images/coming-soon.png" alt="">
+                </div>
+            </div>
+
+            <div class="why-card why-reverse why-card-dark">
+                <div class="why-back"></div>
+                <div class="why-img">
+                    <img src="images/coming-soon.png" alt="">
+                </div>
+                <div class="image-filler"></div>
+                <div class="why-text">
+                    <div class="why-title" >
+                        <h2 style="color: bisque;">بلاگ و اخبار...</h2>
+                    </div>
+                    <div class="why-pr">
+                        <!-- NOTE! no more than 200 char. -->
+                        <p style="color: bisque;">
+                            محتوا و اخبار تخصصی دنیای بردگیم رو اینجا میتونی دنبال کنی و نظرت رو زیر هرکدوم با بقیه به اشتراک بزاری. از آخرین بازی ها و اکسپنشن ها تا بازی هایی که هنوز عرضه نشده , اخبار کیک استارتری و حتی طراح ها و گرافیست ها و کمپانی ها بزرگ رو همه یکجا میتونی توی برد بازار دنبال کنی
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <!-- THIS PART IS HARD CODED FOR COMING SOON PURPOSES -->
+
+        </section>
+        <section class="rap">
+            <div class="welcome-title">
+                <h2>دفترچه راهنما!</h2>
+                <hr class="line">
+            </div>
+            <div class="welcome-pr">
+                <p>
+                    مثل همه بازی ها, این وبسایت هم یه راهنما داره که میتونید خلاصه ای ازش رو اینجا ببینید و راجبش بیشتر بدونید.<br>
+
+                </p>
+            </div>
+            <div class="three-column">
+                
+                <div class="rap-col">
+                    <h3>شرایط و مقررات</h3>
+                    <div class="welcome-pr">
+                        <p>
+                            بردبازار در راستای ایجاد فضایی امن و آرام برای معاملات بازی های شما درپی تدوین توافقنامه ای دو طرفه میان فروشندگان
+                            و خریداران است. <br>بنابراین مطالعه این تفاهمنامه قبل انجام هرگونه فعالیتی
+                            در این بستر باعث افزایش آگاهی و امنیت و کیفیت معاملات شما و دیگران میشود. 
+                        </p>
+                    </div>
+                    <a href="" class="button-74">شرایط و مقررات</a>
+                </div>
+
+                <div class="rap-col">
+                    <h3>سوالات و پشتیبانی</h3>
+                    <div class="welcome-pr">
+                        <p>
+                            سوالات متداول و پرسش و پاسخ و نحوه دقیق کار با وبسایت رو میتونی توی این صفحه مطالعه کنی. همینطور اگه جوابی برای مشکلت پیدا نکردی میتونی با من اینجا تماس بگیری تا بتونیم در اسرع وقت مشکلت رو رفع کنیم.
+                        </p>
+                    </div>
+                    <a href="" class="button-74">پشتیبانی</a>
+
+                </div>
+
+                <div class="rap-col">
+                    <h3>درباره من</h3>
+                    <div class="welcome-pr">
+                        <p>
+                            اگه دوست داشتی بدونی من کیم و اینجا چطور ساخته شده ادامه اش رو تو صفحه درباره من بخون و منو بیشتر بشناس. این بستر فقط توسط یک نفر نوشته و ساخته شده که کل تفریحش برنامه نویسی و بردگیم هست. پس داستان جالب به وجود اومدن اینجا رو از دست نده!
+                        </p>
+                    </div>
+                    <a href="" class="button-74">درباره من</a>
+                </div>
+
+                
+            </div>
+            
+        </section>
+    </main>
+    <footer style="position: relative;">
+        <div class="footer">
+            <img src="images/logo/logo-inline.png" alt="">
+            <div class="footer-contact-us">
+                <h2>ارتباط با ما</h2>
+                <ul>
+                    <li>09380242434</li>
+                    <li>09396216878</li>
+                    <li>Yasin.naqash.1999@gmail.com</li>
+                    <li>Boardbazaar2024@gmail.com</li>
+                </ul>
+            </div>
+            <div class="footer-follow-us">
+                <h2>مارو دنبال کنید</h2>
+
+                <ul>
+                    <li><a href="">instagram</a></li>
+                    <li><a href="">telegram</a></li>
+                    <li><a href="">youtube</a></li>
+                    <li><a href="">discord</a></li>
+                </ul>
+            </div>
+            <div class="footer-pages">
+                <h2>صفحات</h2>
+                <ul>
+                    <li><a href="">خانه</a></li>
+                    <li><a href="">آگهی ها</a></li>
+                    <li><a href="">انجمن ها</a></li>
+                    <li><a href="">فروشگاه ها</a</li>
+                    <li><a href="">بلاگ و اخبار</a></li>
+
+                </ul>
+            </div>
+            
+            
+            <div class="footer-sponsor">
+                <h2>لوگو اسپانسر</h2>
+                <p>در حال حاظر دنبال اسپانسر یا سرمایه گزار هستم</p>
+            </div>
+        </div>
+        <p style="direction: ltr; padding-bottom: 15px;" class="no-convert">©2024  BoardBazaar. All Rights Reserved.</p>
+    </footer>
+    <script src="js/navbar.js"></script>
+    <script src="js/index.js"></script>
+</body>
+</html>

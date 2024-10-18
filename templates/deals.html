@@ -1,0 +1,828 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BoardBazaar | آگهی ها</title>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/premade.css">
+    <link rel="stylesheet" href="css/cards.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://maxcdn.icons8.com/fonts/line-awesome/1.1/css/line-awesome-font-awesome.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+</head>
+<body>
+  <!-- <div id="loading-screen">
+    <div class="loading-screen-wrapper">
+        <div class="welcome-title" style="width: 100%;">
+            <h2> بردبازار   </h2>
+            <hr class="line">
+        </div>
+        <div class="dice"> 
+
+            <div class="face first-face">
+              <div class="dot"></div>  
+            </div>
+            
+            <div class="face second-face">
+              <div class="dot"></div>  
+              <div class="dot"></div>  
+            </div>
+            
+            <div class="face third-face">
+              <div class="dot"></div>  
+              <div class="dot"></div>
+              <div class="dot"></div>
+            </div>
+            
+            <div class="face fourth-face">
+              <div class="column">
+                <div class="dot"></div>  
+                <div class="dot"></div>  
+              </div>
+              <div class="column">
+                <div class="dot"></div>  
+                <div class="dot"></div>  
+              </div>    
+            </div>
+            
+            <div class="face fifth-face">
+              <div class="column" >
+                <div class="dot"></div>  
+                <div class="dot"></div>  
+              </div>
+              <div class="column">
+                <div class="dot"></div>
+              </div>
+              <div class="column" >
+                <div class="dot"></div>  
+                <div class="dot"></div>  
+              </div>    
+            </div>
+            
+            <div class="face sixth-face">
+              <div class="column">
+                <div class="dot"></div>  
+                <div class="dot"></div>
+                <div class="dot"></div>
+              </div>
+              <div class="column">
+                <div class="dot"></div>  
+                <div class="dot"></div>  
+                <div class="dot"></div>
+              </div>    
+            </div>
+            
+          </div>
+        <div class="welcome-pr" id="loading-tip">
+            <p id="tip-text" style="text-align: center;">این یک آزمایش است.</p>
+        </div>
+    </div>
+    
+</div> -->
+
+  <header>
+    <nav>
+        
+        <img class="nav-left" src="images/left.png" alt="">
+        <img class="nav-right" src="images/right.png" alt="">
+        
+        <a href="index.html"><img class="navbar-logo" src="images/logo/logo-inline.png"></a>
+
+        <div class="search-box">
+            <div class="search-icon"><i class="fa fa-search search-icon"></i></div>
+            <form action="" class="search-form">
+              <input type="text" placeholder="اینجا بگرد..." id="search" autocomplete="off">
+            </form>
+            <svg class="search-border" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/" x="0px" y="0px" viewBox="0 0 671 111" style="enable-background:new 0 0 671 111;"
+             xml:space="preserve">
+                <path class="border" d="M335.5,108.5h-280c-29.3,0-53-23.7-53-53v0c0-29.3,23.7-53,53-53h280"/>
+                <path class="border" d="M335.5,108.5h280c29.3,0,53-23.7,53-53v0c0-29.3-23.7-53-53-53h-280"/>
+              </svg>
+            <div class="go-icon"><i class="fa fa-arrow-right"></i></div>
+        </div>
+
+        <div class="navbar-links">
+            <!-- <a class="button-74" href="cards.html">حمایت شما</a>
+
+            <a class="button-74" href="cards.html">درباره من</a> -->
+
+            <a href="construction.html" class="button-74" >انجمن ها</a>
+
+            <a href="construction.html" class="button-74" >فروشگاه ها</a>
+
+            <a href="deals.html" class="button-74" >آگهی ها</a>
+
+            <a href="index.html" class="button-74" >خانه</a>
+
+            
+            <!-- if not logged in
+            <div class="dropdown-toggle button-74 user-box">
+                <img src="images/default_profile.png" alt="">
+                <p>وارد شوید</p>
+            </div>
+
+            <div class="dropdown-menu">
+                <a href="#" class="button-74">ثبت نام</a>
+                <a href="#" class="button-74"> </a>
+                <a href="#" class="button-74">ایجاد مزایده</a>
+                <a href="#" class="button-74">ایجاد فروشگاه</a>
+                <a href="#" class="button-74">واسم یه قهوه بخر</a>
+                <a href="#" class="button-74">خروج</a>
+            </div>
+            
+            -->
+            <div class="dropdown-toggle">
+                
+                <div class="button-74 user-box">
+                    <img src="images/photo_2022-05-31_11-34-33.jpg" alt="">
+                    <p>داشبورد</p>
+                </div>
+
+                <div class="dropdown-menu">
+                    <a href="profile.html" class="button-74">پروفایل</a>
+                    <a href="create.html" class="button-74">ایجاد آگهی</a>
+                    <a href="create-auc.html" class="button-74">ایجاد مزایده</a>
+                    <a href="construction.html" class="button-74">ایجاد فروشگاه</a>
+                    <a href="construction.html" class="button-74">واسم یه قهوه بخر</a>
+                    <a href="login.html" class="button-74">خروج</a>
+                </div> 
+            </div>
+        
+        </div>
+        <div class="sidebar">
+            <!-- Sidebar content here -->
+            <img class="sidebar-header" src="images/sidebar-header.png" alt="">
+            <button class="button-74 slidebar-cross sidebar-toggle "><i class="gg-close"></i></button>
+            <div class="slidebar-links">
+
+                <div class="dropdown-toggle">
+
+                    <div class="button-74 user-box">
+                        <img src="images/photo_2022-05-31_11-34-33.jpg" alt="">
+                        <h4>داشبورد</h4>
+                    </div>
+
+                    <div class="dropdown-menu">
+                        <a href="profile.html" class="button-74">پروفایل</a>
+                        <a href="create.html" class="button-74">ایجاد آگهی</a>
+                        <a href="create-auc.html" class="button-74">ایجاد مزایده</a>
+                        <a href="construction.html" class="button-74">ایجاد فروشگاه</a>
+                        <a href="construction.html" class="button-74">واسم یه قهوه بخر</a>
+                        <a href="login.html" class="button-74">خروج</a>
+                    </div> 
+                </div>
+                
+                <div class="other-links">
+                    <a href="index.html" class="button-74" >خانه</a>
+                    <a href="deals.html" class="button-74" >آگهی ها</a>
+                    <a href="construction.html" class="button-74" >انجمن ها</a>
+                    <a href="construction.html" class="button-74" >فروشگاه ها</a>
+                    <a href="construction.html" class="button-74" >حمایت شما</a>
+                    <a href="construction.html" class="button-74" >درباره من</a>
+
+                </div>
+                
+            </div>
+            
+            <div class="sidebar-footer">
+                <img class="" src="images/sidebar-footer.png" alt="">
+            </div>
+            
+        </div>
+        
+        <button class="button-74 sidebar-toggle"><i class="gg-menu"></i></button>
+        
+
+    </nav>
+</header>
+    <main>
+        <section class="filter-box">
+            <img class="nav-left" src="images/left.png" alt="" style="height: auto; width: 100px; transform: scaleY(-1);">
+            <img class="nav-right" src="images/right.png" alt=""style="height: auto; width: 100px;">
+            <div class="welcome-title" >
+                <div class="filter-span" style="display: flex; flex-direction: row; gap: 35px; align-items: center; justify-content: center;">
+                    <span class="filter-box-arrow">&lt;&lt;&lt;</span> <h4>جستجو پیشرفته!</h4> <span class="filter-box-arrow">&lt;&lt;&lt;</span>
+                </div>
+                <hr class="line">
+            </div>
+            <form action="" method="GET">
+                <div class="filter-box-form">
+                    
+                    <div class="middle-align" style="flex-direction: column; gap: 30px; margin-top: 20px;">
+                        <div class="middle-align">
+                            <div class="input-field">
+                                <input class="button-74" type="text" spellcheck="false" placeholder=" " name="name">
+                                <label>اسم بازی</label>
+                            </div>
+                        </div>
+                        <div class="middle-align">
+                            <div class="input-field">
+                                <input class="button-74" type="text" spellcheck="false" placeholder=" " name="city">
+                                <label>شهر آگهی</label>
+                            </div>
+                        </div>
+                        <div class="middle-align">
+                            <div class="input-field">
+                                <input class="button-74" type="text" spellcheck="false" placeholder=" "name="category">
+                                <label>دسته بندی</label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    
+
+                    
+                    
+                    <div class="middle-align" style="flex-direction: column; width: 300px;">
+
+                        
+                        <div class="middle-align" style="flex-direction: row; grid-area: check; justify-content: center; gap: 5px; margin-top: 35px;">
+                            <div class="checkbox-container">
+                                <label class="custom-checkbox button-74">
+                                  <input type="checkbox" name="in">
+                                  <span>داخلی</span>
+                                </label>
+                            </div>
+                            <div class="checkbox-container">
+                                <label class="custom-checkbox button-74">
+                                  <input type="checkbox" name="out">
+                                  <span>خارجی</span>
+                                </label>
+                            </div>
+                            <div class="checkbox-container">
+                                <label class="custom-checkbox button-74">
+                                  <input type="checkbox" name="sell">
+                                  <span>فروش</span>
+                                </label>
+                            </div>
+                            <div class="checkbox-container">
+                                <label class="custom-checkbox button-74">
+                                  <input type="checkbox" name="buy">
+                                  <span>خرید</span>
+                                </label>
+                            </div>
+                            <div class="checkbox-container">
+                                <label class="custom-checkbox button-74">
+                                  <input type="checkbox" name="action">
+                                  <span>مزایده</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="middle-align">
+                        <div class="wrapper">
+                            <div class="middle-align">
+                                <h2>محدوده قیمت (تومان)</h2>
+                            </div>
+                             
+                            <div class="price-input">
+                              <div class="field">
+                                <span>حداقل</span> 
+                                <!-- parse to int cause it has comma and its string -->
+                                <input type="text" class="input-min button-74 comma-add" value="3,750,000" name="minp"/>
+                              </div>
+                              <div class="field">
+                                <span>حداکثر</span>
+                                <!-- parse to int cause it has comma and its string -->
+                                <input type="text" class="input-max button-74 comma-add" value="11,250,000" name="maxp"/>
+                              </div>
+                            </div>
+                            <div class="slider">
+                              <div class="progress"></div>
+                            </div>
+                            <div class="range-input">
+                              <input type="range" class="range-min" min="0" max="15000000" value="3750000" step="100000">
+                              <input type="range" class="range-max" min="0" max="15000000" value="11250000" step="100000">
+                            </div>
+                          </div>
+                    </div>
+                    
+
+                </div>
+                <div class="middle-align" style="padding: 30px;">
+                    <button type="submit" class="button-74" style="min-width: 200px;"><h3>جستجو</h3></button>
+
+                </div>
+                
+            </form>
+
+
+<!--             
+            جستجو بر اساس نام بازی
+            جستوجو بر اساس شهر
+            تایپ آگهی (فروش خرید مزایده)
+            تولید (داخل خارج)
+            جستوجو براساس دسته بندی
+            محدوده قیمت آگهی
+            محدوده قیمت تک بازی
+ -->
+
+        </section>
+
+        <section class="deals">
+
+            <div class="card">
+                <div class="image-holder">
+                  <img src="images/deals/abed/abed-azul.webp" alt="" class="active">
+                  <img src="images/deals/abed/abed-splendor.webp" alt="">
+                  <img src="images/deals/abed/abed-catan.webp" alt="">
+                  <img src="images/deals/abed/abed-catan2.webp" alt="">
+                  <img src="images/deals/abed/abed-risk.jpg" alt="">
+                </div>
+                <div class="usernamebox">
+                  <a href="profile.html">Abed</a>
+                </div>
+                <div class="titlebox">
+                  <p>فروش Risk, Catan, Splendor, و Azul</p>
+                </div>
+                <hr>
+                <div class="descriptionbox">
+                  <p>فروش چهار بازی خارجی در شرایط بسیار خوب. بازی‌ها به ندرت استفاده شده‌اند و همه قطعات کامل و سالم هستند.</p>
+                </div>
+                <div class="details-bar">
+                  <div class="date">3 روز پیش</div>
+                  <div class="types">
+                    <div class="type">خارجی</div>
+                    <div class="type">فروش</div>
+                  </div>
+                </div>
+                <div class="pricebox">
+                  <div class="header">
+                    <div class="quantity">4 بازی</div>
+                    <div class="price"><p class="comma-add-string">3000000</p>&nbsp;&nbsp;تومان</div>
+                  </div>
+                  <div class="body">
+                    <div class="game">Risk</div>
+                    <div class="game">Catan</div>
+                    <div class="game">Splendor</div>
+                    <div class="game">Azul</div>
+                  </div>
+                  <a href="details-sell.html"><div class="details-button">مشاهده</div></a>
+                </div>
+              </div>
+              
+
+              <div class="card">
+                <div class="image-holder">
+                  <img src="images/deals/dendi-monopoly.jpg" alt="" class="active">
+                </div>
+                <div class="usernamebox">
+                  <a href="profile.html">Dendi</a>
+                </div>
+                <div class="titlebox">
+                  <p>  نسخه لوکس مونوپولی</p>
+                </div>
+                <hr>
+                <div class="descriptionbox">
+                  <p>   نسخه لوکس بازی مونوپولی . قیمت پیشنهادی: 3,500,000 تومان</p>
+                </div>
+                <div class="details-bar">
+                  <div class="date">7 روز پیش</div>
+                  <div class="types">
+                    <div class="type">خارجی</div>
+                    <div class="type">خرید</div>
+                  </div>
+                </div>
+                <div class="pricebox">
+                  <div class="header">
+                    <div class="quantity">1 بازی</div>
+                    <div class="price"><p class="comma-add-string">3500000</p>&nbsp;&nbsp;تومان</div>
+                  </div>
+                  <div class="body">
+                    <div class="game">Monopoly Deluxe Edition</div>
+                  </div>
+                  <a href="details-sell.html"><div class="details-button">مشاهده</div></a>
+                </div>
+              </div>
+              
+              <div class="card yellow-theme">
+                <div class="image-holder">
+                  <img src="images/deals/topson-root.jpg" alt="" class="active">
+                  <img src="images/deals/topson-anachorny.jpg" alt="">
+                </div>
+                <div class="usernamebox">
+                  <a href="profile.html">Topson</a>
+                </div>
+                <div class="titlebox">
+                  <p>مزایده بازی روت و تمام افزونه‌ها به همراه آنکرونی</p>
+                </div>
+                <hr>
+                <div class="descriptionbox">
+                  <p>بازی روت و تمام افزونه‌های آن به همراه بازی آنکرونی به مزایده گذاشته می‌شود. تمامی بازی‌ها در شرایط عالی و سالم.</p>
+                </div>
+                <div class="details-bar">
+                  <div class="date">5 روز پیش</div>
+                  <div class="types">
+                    <div class="type">خارجی</div>
+                    <div class="type">مزایده</div>
+                  </div>
+                </div>
+                <div class="pricebox">
+                  <div class="header">
+                    <div class="quantity">2 بازی</div>
+                    <div class="price"><p class="comma-add-string">4200000</p>&nbsp;&nbsp;تومان</div>
+                  </div>
+                  <div class="body">
+                    <div class="game">Root و تمام افزونه‌ها</div>
+                    <div class="game">Anachrony</div>
+                  </div>
+                  <a href="details-auc.html"><div class="details-button">مشاهده</div></a>
+                </div>
+              </div>
+                
+              <div class="card">
+                <div class="image-holder">
+                  <img src="images/deals/nisha-gloomhaven.jpg" alt="" class="active">
+                  <img src="images/deals/nisha-brass.jpg" alt="">
+                </div>
+                <div class="usernamebox">
+                  <a href="profile.html">Nisha</a>
+                </div>
+                <div class="titlebox">
+                  <p>فروش Brass: Birmingham و Gloomhaven</p>
+                </div>
+                <hr>
+                <div class="descriptionbox">
+                  <p>فروش بازی‌های Brass: Birmingham و Gloomhaven در شرایط عالی.</p>
+                </div>
+                <div class="details-bar">
+                  <div class="date">10 روز پیش</div>
+                  <div class="types">
+                    <div class="type">خارجی</div>
+                    <div class="type">فروش</div>
+                  </div>
+                </div>
+                <div class="pricebox">
+                  <div class="header">
+                    <div class="quantity">2 بازی</div>
+                    <div class="price"><p class="comma-add-string">3000000</p>&nbsp;&nbsp;تومان</div>
+                  </div>
+                  <div class="body">
+                    <div class="game">Brass: Birmingham</div>
+                    <div class="game">Gloomhaven</div>
+                  </div>
+                  <a href="details-sell.html"><div class="details-button">مشاهده</div></a>
+                </div>
+              </div>
+
+              <div class="card">
+                <div class="image-holder">
+                  <img src="images/deals/insania-پایاپای.jpg" alt="" class="active">
+                  <img src="images/deals/insania-کودتا.jpeg" alt="">
+                  <img src="images/deals/insania-گربه.jpeg" alt="">
+                </div>
+                <div class="usernamebox">
+                  <a href="profile.html">Insania</a>
+                </div>
+                <div class="titlebox">
+                  <p>فروش ۸ بازی ایرانی</p>
+                </div>
+                <hr>
+                <div class="descriptionbox">
+                  <p>فروش ۸ بازی ایرانی یکجا همه باهم.</p>
+                </div>
+                <div class="details-bar">
+                  <div class="date">3 روز پیش</div>
+                  <div class="types">
+                    <div class="type">داخلی</div>
+                    <div class="type">فروش</div>
+                  </div>
+                </div>
+                <div class="pricebox">
+                  <div class="header">
+                    <div class="quantity">8 بازی</div>
+                    <div class="price"><p class="comma-add-string">1500000</p>&nbsp;&nbsp;تومان</div>
+                  </div>
+                  <div class="body">
+                    <div class="game">پایاپای</div>
+                    <div class="game">جالیز</div>
+                    <div class="game">روپولی</div>
+                    <div class="game">گربه انفجاری</div>
+                    <div class="game">کودتا</div>
+                    <div class="game">ساگرادا</div>
+                    <div class="game">پاتک</div>
+                    <div class="game">عصر حجر</div>
+                  </div>
+                  <a href="details-sell.html"><div class="details-button">مشاهده</div></a>
+                </div>
+              </div>
+              
+              <div class="card blue-theme">
+                <div class="image-holder">
+                  <img src="images/deals/quinn-wingspan.jpg" alt="" class="active">
+                  <img src="images/deals/quinn-terraforming.jpg" alt="">
+                </div>
+                <div class="usernamebox">
+                  <a href="profile.html">Quinn</a>
+                </div>
+                <div class="titlebox">
+                  <p>خرید Terraforming Mars و Wingspan</p>
+                </div>
+                <hr>
+                <div class="descriptionbox">
+                  <p>دنبال خرید بازی‌های Terraforming Mars و Wingspan هستم. بازی‌ها باید در وضعیت خوبی باشند و تمامی قطعات موجود باشند.</p>
+                </div>
+                <div class="details-bar">
+                  <div class="date">6 روز پیش</div>
+                  <div class="types">
+                    <div class="type">خارجی</div>
+                    <div class="type">خرید</div>
+                  </div>
+                </div>
+                <div class="pricebox">
+                  <div class="header">
+                    <div class="quantity">2 بازی</div>
+                    <div class="price"><p class="comma-add-string">3800000</p>&nbsp;&nbsp;تومان</div>
+                  </div>
+                  <div class="body">
+                    <div class="game">Terraforming Mars</div>
+                    <div class="game">Wingspan</div>
+                  </div>
+                  <a href="details-buy.html"><div class="details-button">مشاهده</div></a>
+                </div>
+              </div>
+              
+              <div class="card">
+                <div class="image-holder">
+                  <img src="images/deals/yatoro-جالیز.jpeg" alt="" class="active">
+                  <img src="images/deals/yatoro-عصرحجر.jpg" alt="">
+                  <img src="images/deals/yatoro-پاتک.jpg" alt="">
+                </div>
+                <div class="usernamebox">
+                  <a href="profile.html">Yatoro</a>
+                </div>
+                <div class="titlebox">
+                  <p>فروش ۶ بازی ایرانی</p>
+                </div>
+                <hr>
+                <div class="descriptionbox">
+                  <p>فروش ۶ بازی ایرانی با شرایط بسیار خوب. بازی‌ها به ندرت استفاده شده‌اند و تمامی قطعات کامل هستند.</p>
+                </div>
+                <div class="details-bar">
+                  <div class="date">4 روز پیش</div>
+                  <div class="types">
+                    <div class="type">داخلی</div>
+                    <div class="type">فروش</div>
+                  </div>
+                </div>
+                <div class="pricebox">
+                  <div class="header">
+                    <div class="quantity">6 بازی</div>
+                    <div class="price"><p class="comma-add-string">2500000</p>&nbsp;&nbsp;تومان</div>
+                  </div>
+                  <div class="body">
+                    <div class="game">پایاپای</div>
+                    <div class="game">جالیز</div>
+                    <div class="game">گربه انفجاری</div>
+                    <div class="game">کودتا</div>
+                    <div class="game">پاتک</div>
+                    <div class="game">عصر حجر</div>
+                  </div>
+                  <a href="details-sell.html"><div class="details-button">مشاهده</div></a>
+                </div>
+              </div>
+
+              <div class="card">
+                <div class="image-holder">
+                  <img src="images/deals/gpk-eclipse.webp" alt="" class="active">
+                  <img src="images/deals/gpk-sythce.jpg" alt="">
+                  <img src="images/deals/gpk-burgandy.jpg" alt="">
+                </div>
+                <div class="usernamebox">
+                  <a href="profile.html">Gpk</a>
+                </div>
+                <div class="titlebox">
+                  <p>فروش The Castles of Burgundy, Scythe, و Eclipse</p>
+                </div>
+                <hr>
+                <div class="descriptionbox">
+                  <p>فروش سه بازی خارجی در شرایط بسیار خوب. بازی‌ها کمتر از چند بار استفاده شده‌اند و تمامی قطعات سالم و کامل هستند.</p>
+                </div>
+                <div class="details-bar">
+                  <div class="date">2 روز پیش</div>
+                  <div class="types">
+                    <div class="type">خارجی</div>
+                    <div class="type">فروش</div>
+                  </div>
+                </div>
+                <div class="pricebox">
+                  <div class="header">
+                    <div class="quantity">3 بازی</div>
+                    <div class="price"><p class="comma-add-string">7700000</p>&nbsp;&nbsp;تومان</div>
+                  </div>
+                  <div class="body">
+                    <div class="game">The Castles of Burgundy</div>
+                    <div class="game">Scythe</div>
+                    <div class="game">Eclipse: Second Dawn for the Galaxy</div>
+                  </div>
+                  <a href="details-sell.html"><div class="details-button">مشاهده</div></a>
+                </div>
+              </div>
+              
+
+              <div class="card blue-theme">
+                <div class="image-holder">
+                  <img src="images/deals/miposhka-frosthaven.jpg" alt="" class="active">
+                  <img src="images/deals/miposhka-spiritisland.png" alt="">
+                </div>
+                <div class="usernamebox">
+                  <a href="profile.html">Miposhka</a>
+                </div>
+                <div class="titlebox">
+                  <p>خرید Frosthaven و Spirit Island</p>
+                </div>
+                <hr>
+                <div class="descriptionbox">
+                  <p>به دنبال خرید بازی‌های Frosthaven و Spirit Island هستم. لطفاً اگر این بازی‌ها را در وضعیت خوب و با تمامی قطعات دارید، به من اطلاع دهید.</p>
+                </div>
+                <div class="details-bar">
+                  <div class="date">8 روز پیش</div>
+                  <div class="types">
+                    <div class="type">خارجی</div>
+                    <div class="type">خرید</div>
+                  </div>
+                </div>
+                <div class="pricebox">
+                  <div class="header">
+                    <div class="quantity">2 بازی</div>
+                    <div class="price"><p class="comma-add-string">5200000</p>&nbsp;&nbsp;تومان</div>
+                  </div>
+                  <div class="body">
+                    <div class="game">Frosthaven</div>
+                    <div class="game">Spirit Island</div>
+                  </div>
+                  <a href="details-buy.html"><div class="details-button">مشاهده</div></a>
+                </div>
+              </div>
+              
+              <div class="card yellow-theme">
+                <div class="image-holder">
+                  <img src="images/deals/mikey-gaia.jpg" alt="" class="active">
+                  <img src="images/deals/mikey-terra.jpg" alt="">
+                </div>
+                <div class="usernamebox">
+                  <a href="profile.html">Mikey</a>
+                </div>
+                <div class="titlebox">
+                  <p>مزایده Terra Mystica و Gaia Project</p>
+                </div>
+                <hr>
+                <div class="descriptionbox">
+                  <p>مزایده دو بازی استراتژیک Terra Mystica و Gaia Project. بازی‌ها در شرایط عالی با تمامی قطعات و بدون نقص.</p>
+                </div>
+                <div class="details-bar">
+                  <div class="date">11 روز پیش</div>
+                  <div class="types">
+                    <div class="type">خارجی</div>
+                    <div class="type">مزایده</div>
+                  </div>
+                </div>
+                <div class="pricebox">
+                  <div class="header">
+                    <div class="quantity">2 بازی</div>
+                    <div class="price"><p class="comma-add-string">4500000</p>&nbsp;&nbsp;تومان</div>
+                  </div>
+                  <div class="body">
+                    <div class="game">Terra Mystica</div>
+                    <div class="game">Gaia Project</div>
+                  </div>
+                  <a href="details-auc.html"><div class="details-button">مشاهده</div></a>
+                </div>
+              </div>
+
+              <div class="card blue-theme">
+                <div class="image-holder">
+                  <img src="images/deals/mira-pax.jpg" alt="" class="active">
+                  <img src="images/deals/mira-great.jpg" alt="">
+                  <img src="images/deals/mira-viti.jpg" alt="">
+                </div>
+                <div class="usernamebox">
+                  <a href="profile.html">Mira</a>
+                </div>
+                <div class="titlebox">
+                  <p>خرید Great Western Trail، Pax Pamir و Viticulture</p>
+                </div>
+                <hr>
+                <div class="descriptionbox">
+                  <p>به دنبال خرید بازی‌های Great Western Trail، Pax Pamir: Second Edition و Viticulture Essential Edition هستم. لطفاً اگر این بازی‌ها را در شرایط خوب دارید با من تماس بگیرید.</p>
+                </div>
+                <div class="details-bar">
+                  <div class="date">5 روز پیش</div>
+                  <div class="types">
+                    <div class="type">خارجی</div>
+                    <div class="type">خرید</div>
+                  </div>
+                </div>
+                <div class="pricebox">
+                  <div class="header">
+                    <div class="quantity">3 بازی</div>
+                    <div class="price"><p class="comma-add-string">5000000</p>&nbsp;&nbsp;تومان</div>
+                  </div>
+                  <div class="body">
+                    <div class="game">Great Western Trail</div>
+                    <div class="game">Pax Pamir: Second Edition</div>
+                    <div class="game">Viticulture Essential Edition</div>
+                  </div>
+                  <a href="details-buy.html"><div class="details-button">مشاهده</div></a>
+                </div>
+              </div>
+
+              <div class="card">
+                <div class="image-holder">
+                  <img src="images/deals/watson-warofring.jpg" alt="" class="active">
+                  <img src="images/deals/1.webp" alt="">
+                </div>
+                <div class="usernamebox">
+                  <a href="profile.html">Watson</a>
+                </div>
+                <div class="titlebox">
+                  <p>فروش Gloomhaven، Twilight Imperium و War of the Ring</p>
+                </div>
+                <hr>
+                <div class="descriptionbox">
+                  <p>فروش سه بازی استراتژیک فوق‌العاده شامل Gloomhaven، Twilight Imperium: Fourth Edition و War of the Ring: Second Edition. تمامی بازی‌ها در شرایط بسیار خوب و با قطعات کامل.</p>
+                </div>
+                <div class="details-bar">
+                  <div class="date">9 روز پیش</div>
+                  <div class="types">
+                    <div class="type">خارجی</div>
+                    <div class="type">فروش</div>
+                  </div>
+                </div>
+                <div class="pricebox">
+                  <div class="header">
+                    <div class="quantity">3 بازی</div>
+                    <div class="price"><p class="comma-add-string">6000000</p>&nbsp;&nbsp;تومان</div>
+                  </div>
+                  <div class="body">
+                    <div class="game">Gloomhaven</div>
+                    <div class="game">Twilight Imperium: Fourth Edition</div>
+                    <div class="game">War of the Ring: Second Edition</div>
+                  </div>
+                  <a href="details-sell.html"><div class="details-button">مشاهده</div></a>
+                </div>
+              </div>
+              
+
+        </section>
+
+        <section class="pagination">
+            <button class="button-74" id="prev-button"><h3>صفحه قبل</h3></button>
+
+            <span class="button-74" id="current-page">صفحه 1</span>
+
+            <button class="button-74" id="next-button"><h3>صفحه بعد</h3></button>
+            
+        </section>
+        
+    </main>
+
+
+    <footer style="position: relative;">
+        <div class="footer">
+            <img src="images/logo/logo-inline.png" alt="">
+            <div class="footer-contact-us">
+                <h2>ارتباط با ما</h2>
+                <ul>
+                    <li>09380242434</li>
+                    <li>09396216878</li>
+                    <li>Yasin.naqash.1999@gmail.com</li>
+                    <li>Boardbazaar2024@gmail.com</li>
+                </ul>
+            </div>
+            <div class="footer-follow-us">
+                <h2>مارو دنبال کنید</h2>
+
+                <ul>
+                    <li><a href="">instagram</a></li>
+                    <li><a href="">telegram</a></li>
+                    <li><a href="">youtube</a></li>
+                    <li><a href="">discord</a></li>
+                </ul>
+            </div>
+            <div class="footer-pages">
+                <h2>صفحات</h2>
+                <ul>
+                    <li><a href="">خانه</a></li>
+                    <li><a href="">آگهی ها</a></li>
+                    <li><a href="">انجمن ها</a></li>
+                    <li><a href="">فروشگاه ها</a</li>
+                    <li><a href="">بلاگ و اخبار</a></li>
+
+                </ul>
+            </div>
+            
+            
+            <div class="footer-sponsor">
+                <h2>لوگو اسپانسر</h2>
+                <p>در حال حاظر دنبال اسپانسر یا سرمایه گزار هستم</p>
+            </div>
+        </div>
+        <p style="direction: ltr; padding-bottom: 15px;">©2024  BoardBazaar. All Rights Reserved.</p>
+    </footer>
+    <script src="js/navbar.js"></script>
+    <script src="js/deals.js"></script>
+</body>
+</html>

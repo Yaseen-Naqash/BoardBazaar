@@ -1,0 +1,238 @@
+:root {
+    --primary-color: #ffead2;
+    --red-color: #e73656;
+    --blue-color: #00adb2;
+    --yellow-color: #ff9d00;
+    --text-color: #293340;
+  }
+
+  /* fonts */
+
+  @font-face {
+    font-family: 'Teshrin-bold';
+    src: url('../fonts/TeshrinAR+LT-Bold.otf') format('opentype'); 
+    font-weight: bold; 
+  }
+  @font-face {
+    font-family: 'digi-lalezar';
+    src: url('../fonts/Digi\ Lalezar\ Plus.otf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  
+  /* basics */
+  * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+  }
+
+  html{
+    direction: rtl; 
+  
+  }
+
+  input[type="text"], input[type="email"], input[type="password"], textarea, select {
+    font-family:'Teshrin-regular';
+  }
+  input[type="text"]:focus {
+    outline: none;
+  }
+
+/* Change the color of the selected text and its background */
+::selection {
+  color: white;         /* Text color */
+  background: var(--red-color);     /* Background color */
+}
+
+/* For Firefox compatibility */
+::-moz-selection {
+  color: white;         /* Text color */
+  background: var(--red-color);     /* Background color */
+}
+
+  body {
+    /* prevent selecting text */
+    -webkit-user-select: none; /* Safari */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version */
+
+    
+    direction: rtl;
+    text-align: right;
+      background-image: url(../images/background.jpg);
+      color: var(--text-color);
+      font-family: 'Teshrin-bold';
+      line-height: 1.6;
+      text-align: right;
+      overflow-x: hidden;
+  }
+
+  /* For Chrome, Safari, Edge, and Opera */
+  input[type="number"]::-webkit-outer-spin-button,
+  input[type="number"]::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+  }
+
+  /* For Firefox */
+  input[type="number"] {
+      -moz-appearance: textfield;
+  }
+
+  h1,h2,h3,h4,h5{
+    font-family: 'digi-lalezar';
+    line-height: 1.2;
+
+  }
+  p{
+    font-family: 'Teshrin-bold';
+  }
+  a{
+    color: inherit; /* Inherit color from parent */
+    font-size: inherit; /* Inherit font size from parent */
+    text-decoration: none; 
+  }
+  button{
+    font-family: 'Teshrin-bold';
+  }
+  main {
+    background-color: transparent;
+    position: relative;
+    margin: 3vw;
+  }
+
+  fieldset {
+    border: none;
+  }
+
+
+
+  /* loading screen */
+  .loading-screen-wrapper{
+    padding: 15px;
+    background-color: var(--primary-color);
+    width: 80%;
+    height: fit-content;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    
+    position: relative;
+    /* border: 6px solid var(--red-color); */
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+  }
+
+
+
+#loading-screen {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-image: url(../images/background.jpg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+
+/* scroll bar */
+/* WebKit-based browsers */
+::-webkit-scrollbar {
+  width: 12px;  /* Width of the scrollbar */
+  height: 12px; /* Height of the scrollbar (for horizontal scrollbar) */
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--red-color); /* Color of the draggable part */
+  border-radius: 10px; /* Rounded corners */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--red-color); /* Color when hovered */
+}
+
+::-webkit-scrollbar-track {
+  background: transparent; /* Background color of the scrollbar track */
+  border-radius: 10px; /* Rounded corners */
+}
+
+/* Firefox */
+html {
+  scrollbar-width: thin; /* Options: auto, thin, none */
+  scrollbar-color: var(--red-color) var(--primary-color); /* Color of the thumb and track */
+  
+}
+
+
+/* custome alert */
+.contact-info {
+  cursor: pointer;
+}
+.contact-items{
+  position:relative;
+
+}
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1001;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0,0.4);
+  padding-top: 60px;
+}
+.modal-content {
+  direction: rtl;
+  background-color: var(--primary-color);
+  border: 3px solid var(--red-color);
+  border-radius: 15px;
+  margin: 5% auto;
+  padding: 20px;
+  width: 80%;
+  max-width: 500px;
+}
+.close {
+  border: 3px solid var(--red-color);
+  background-color: var(--primary-color);
+  border-radius: 50px;
+  max-width: fit-content;
+  color: var(--red-color);
+  position: absolute;
+  left: 3%;
+  top: 2%;
+  font-size: 28px;
+  padding: 0px 15px;
+  transition: background-color 0.4s, transform 0.4s ,box-shadow 0.4s;
+  box-shadow: var(--red-color) 4px 4px 0 0;
+  
+}
+.close:hover,
+.close:focus {
+  box-shadow: var(--red-color) 7px 7px 0 0;
+  transform: scale(1.02);
+  background-color: #fff;
+  text-decoration: none;
+  cursor: pointer;
+}
+.contact-items{
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  gap: 15px;
+ 
+}
