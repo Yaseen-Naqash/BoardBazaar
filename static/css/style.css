@@ -2474,7 +2474,7 @@ input[type="range"]::-moz-range-thumb{
   /* messages */
   .messages{
     position: absolute;
-    top: 15%;
+    top: 0%;
     left: 50%;
     transform: translate(-50%,-50%);
     display: flex;
@@ -2483,6 +2483,7 @@ input[type="range"]::-moz-range-thumb{
     align-items: center;
     gap: 20px;
     width: 100%;
+    z-index: 1002;
 
 
 }

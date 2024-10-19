@@ -55,13 +55,11 @@ document.getElementById('register-form').addEventListener('submit', function (e)
     } else if (/([a-zA-Z])\1{2,}/.test(usernameValue)) {
         showError(usernameField, 'نام کاربری نباید سه یا بیشتر حرف متوالی داشته باشد');
     } else {
-        const usernameList = document.querySelector('#username_list');
+
+        // if there is a error message from django message like this username exist we change this to true
+
         let usernameExists = false;
-        usernameList.querySelectorAll('option').forEach(option => {
-            if (option.value === usernameValue) {
-                usernameExists = true;
-            }
-        });
+        
         if (usernameExists) {
             showError(usernameField, 'این نام کاربری قبلا انتخاب شده است');
         } else {
@@ -70,6 +68,21 @@ document.getElementById('register-form').addEventListener('submit', function (e)
     }
 
 
+        // Validate phone number (شماره تلفن)
+        const phoneField = document.getElementById('phone');
+        const phoneValue = phoneField.value;
+        if (!/^\d{11}$/.test(phoneValue)) {
+            showError(phoneField, 'شماره تلفن باید 11 رقمی باشد');
+        } else {
+            // if there is a error message from django message like this phone number exist we change this to true
+            let phoneExists = false;
+    
+            if (phoneExists) {
+                showError(phoneField, 'این شماره تلفن قبلا ثبت شده است');
+            } else {
+                resetError(phoneField);
+            }
+        }
 
     // Validate password (رمز عبور) and confirm password (تکرار رمز عبور)
     const passwordField = document.getElementById('pass1');

@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser
-
+import random
+from django.utils import timezone
 # Create your models here.
 
 
@@ -15,7 +16,23 @@ class User(AbstractUser):
     purchases = models.IntegerField(default=0, null=True, blank=True)
     
     def __str__(self) -> str:
-        return self.name
+        return self.username
+    
+class PhoneVerification(models.Model):
+    phone_number = models.CharField(max_length=11,null=True, blank=True)  # Adjust length as necessary
+    verification_code = models.CharField(default='0000', max_length=4, null=True, blank=True)  # Assuming 4-digit code
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def is_expired(self):
+
+        if timezone.now() > self.created_at + timezone.timedelta(seconds=120):
+            self.verification_code='0000'
+            return True
+        else:
+            return False
+
+    def generate_code(self):
+        self.verification_code = str(random.randint(1000, 9999))
     
 class FeedBack(models.Model):
     feedback_giver = models.ForeignKey(User, on_delete=models.SET_NULL, related_name='given_feedbacks', null=True, blank=True)
@@ -58,7 +75,7 @@ class Deal(models.Model):
     #comments = models.TextField(max_length=500,null=True,blank=True)
 
     class Meta:
-        ordering = ['isdead','-updated','-created']
+        ordering = ['isdead','-updated_at','-created_at']
 
     
     def __str__(self) -> str:
@@ -77,7 +94,7 @@ class Boardgame(models.Model):
     status = models.CharField(default=0, max_length=1, choices=STATUS, blank=True, null=True)
     name = models.CharField(max_length=127, null=True, blank=True)
     price = models.IntegerField(default=0, null=True, blank=True)
-    categories = models.ManyToManyField('Category', related_name='boardgames', blank=True, null=True)
+    categories = models.ManyToManyField('Category', related_name='boardgames', blank=True)
     
     def __str__(self) -> str:
         return self.name

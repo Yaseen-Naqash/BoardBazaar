@@ -3,13 +3,20 @@
 <html lang="fa" dir="rtl">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}BoardBazaar{% endblock %}</title>
     {% load static %}
     <!-- Global CSS (like your base styles) -->
-    <link rel="stylesheet" href="css/base.css">
-    <link rel="stylesheet" href="css/cards.css">
-    <link rel="stylesheet" href="css/premade.css">
-    <link rel="stylesheet" href="css/style.css">
+     <link rel="stylesheet" href="{% static 'css/base.css' %}">
+     <link rel="stylesheet" href="{% static 'css/cards.css' %}">
+     <link rel="stylesheet" href="{% static 'css/premade.css' %}">
+     <link rel="stylesheet" href="{% static 'css/style.css' %}">
+     <link rel="icon" type="image/x-icon" href="{% static 'images/favicon.png' %}">
+
+
+    <!-- search box -->
+    <link rel="stylesheet" href="https://maxcdn.icons8.com/fonts/line-awesome/1.1/css/line-awesome-font-awesome.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <!-- Additional CSS for individual pages can be added here -->
     {% block extra_css %}{% endblock %}
 </head>
@@ -17,14 +24,15 @@
 
     <nav>
             
-        <img class="nav-left" src="images/left.png" alt="">
-        <img class="nav-right" src="images/right.png" alt="">
+        <img class="nav-left" src="{% static 'images/left.png' %}" alt="">
+        <img class="nav-right" src="{% static 'images/right.png' %}" alt="">
         
-        <a href="index.html"><img class="navbar-logo" src="images/logo/logo-inline.png"></a>
+        <a href="{% url 'landing_page_url' %}"><img class="navbar-logo" src="{% static 'images/logo/logo-inline.png' %}"></a>
 
         <div class="search-box">
             <div class="search-icon"><i class="fa fa-search search-icon"></i></div>
             <form action="" class="search-form">
+            {% csrf_token %}
               <input type="text" placeholder="اینجا بگرد..." id="search" autocomplete="off">
             </form>
             <svg class="search-border" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/" x="0px" y="0px" viewBox="0 0 671 111" style="enable-background:new 0 0 671 111;"
@@ -46,29 +54,14 @@
 
             <a href="deals.html" class="button-74" >آگهی ها</a>
 
-            <a href="index.html" class="button-74" >خانه</a>
+            <a href="{% url 'landing_page_url' %}" class="button-74" >خانه</a>
 
             
-            <!-- if not logged in
-            <div class="dropdown-toggle button-74 user-box">
-                <img src="images/default_profile.png" alt="">
-                <p>وارد شوید</p>
-            </div>
-
-            <div class="dropdown-menu">
-                <a href="#" class="button-74">ثبت نام</a>
-                <a href="#" class="button-74"> </a>
-                <a href="#" class="button-74">ایجاد مزایده</a>
-                <a href="#" class="button-74">ایجاد فروشگاه</a>
-                <a href="#" class="button-74">واسم یه قهوه بخر</a>
-                <a href="#" class="button-74">خروج</a>
-            </div>
-            
-            -->
+            {% if request.user.is_authenticated %}
             <div class="dropdown-toggle">
                 
                 <div class="button-74 user-box">
-                    <img src="images/photo_2022-05-31_11-34-33.jpg" alt="">
+                    <img src="{% static 'images/photo_2022-05-31_11-34-33.jpg' %}" alt="">
                     <p>داشبورد</p>
                 </div>
 
@@ -81,18 +74,38 @@
                     <a href="login.html" class="button-74">خروج</a>
                 </div> 
             </div>
+            {% else %}
+            <div class="dropdown-toggle">
+                <div class="button-74 user-box">
+                    <img src="{% static 'images/default_profile.png' %}" alt="">
+                    <p>وارد شوید</p>
+                </div>
+    
+                <div class="dropdown-menu">
+                    <a href="{% url 'register_url' %}" class="button-74">ثبت نام</a>
+                    <a href="{% url 'login_url' %}" class="button-74">ورود</a>
+                </div>
+            </div>
+
+            {% endif %}
+
+            
+           
+
         
         </div>
         <div class="sidebar">
             <!-- Sidebar content here -->
-            <img class="sidebar-header" src="images/sidebar-header.png" alt="">
+            <img class="sidebar-header" src="{% static 'images/sidebar-header.png' %}" alt="">
             <button class="button-74 slidebar-cross sidebar-toggle "><i class="gg-close"></i></button>
             <div class="slidebar-links">
 
+
+                {% if request.user.is_authenticated %}
                 <div class="dropdown-toggle">
 
                     <div class="button-74 user-box">
-                        <img src="images/photo_2022-05-31_11-34-33.jpg" alt="">
+                        <img src="{% static 'images/photo_2022-05-31_11-34-33.jpg' %}" alt="">
                         <h4>داشبورد</h4>
                     </div>
 
@@ -105,6 +118,20 @@
                         <a href="login.html" class="button-74">خروج</a>
                     </div> 
                 </div>
+                {% else %}
+                <div class="dropdown-toggle">
+                    <div class="button-74 user-box">
+                        <img src="{% static 'images/default_profile.png' %}" alt="">
+                        <p>وارد شوید</p>
+                    </div>
+        
+                    <div class="dropdown-menu">
+                        <a href="{% url 'register_url' %}" class="button-74">ثبت نام</a>
+                        <a href="{% url 'login_url' %}" class="button-74">ورود</a>
+                    </div>
+                </div>
+                {% endif %}
+
                 
                 <div class="other-links">
                     <a href="index.html" class="button-74" >خانه</a>
@@ -119,7 +146,7 @@
             </div>
             
             <div class="sidebar-footer">
-                <img class="" src="images/sidebar-footer.png" alt="">
+                <img class="" src="{% static 'images/sidebar-footer.png' %}" alt="">
             </div>
             
         </div>
@@ -140,6 +167,8 @@
         {% endfor %}
       </div>
       {% endif %}
+
+
         
 
 
@@ -152,7 +181,7 @@
     <!-- Footer -->
     <footer style="position: relative;">
         <div class="footer">
-            <img src="images/logo/logo-inline.png" alt="">
+            <img src="{% static 'images/logo/logo-inline.png' %}" alt="">
             <div class="footer-contact-us">
                 <h2>ارتباط با ما</h2>
                 <ul>

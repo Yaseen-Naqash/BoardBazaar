@@ -41,30 +41,30 @@ document.getElementById('send-code').addEventListener('click', function(event) {
     var sendCodeButton = document.getElementById('send-code');
 
     // Send the request to Django backend
-    // fetch('/send-code/', {  // Change this to your Django URL
-    //     method: 'POST',
-    //     headers: {
-    //         'Content-Type': 'application/json',
-    //         'X-CSRFToken': '{{ csrf_token }}'  // Ensure CSRF token is passed
-    //     },
-    //     body: JSON.stringify({
-    //         phone_number: phoneNumber
-    //     })
-    // })
-    // .then(response => response.json())
-    // .then(data => {
-    //     // Handle the response data
-    //     if (data.success) {
-    //         alert('Code sent successfully!');
-    //         // Start the countdown timer after a successful code send
-    //         startCountdown(sendCodeButton, 120);  // 120 seconds = 2 minutes
-    //     } else {
-    //         alert('Failed to send code.');
-    //     }
-    // })
-    // .catch(error => {
-    //     console.error('Error:', error);
-    // });
+    fetch('/send-code/', {  // Change this to your Django URL
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'X-CSRFToken': csrftoken  // Ensure CSRF token is passed
+        },
+        body: JSON.stringify({
+            phone_number: phoneNumber
+        })
+    })
+    .then(response => response.json())
+    .then(data => {
+        // Handle the response data
+        if (data.success) {
+            alert('کد ارسال شد!');
+            // Start the countdown timer after a successful code send
+            startCountdown(sendCodeButton, 120);  // 120 seconds = 2 minutes
+        } else {
+            alert('شماره تلفن به درستی وارد نشده');
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+    });
 });
 
 
@@ -77,7 +77,7 @@ function startCountdown(button, seconds) {
     var originalText = button.textContent;  // Store the original button text
     var timerInterval = setInterval(function() {
         if (seconds > 0) {
-            button.textContent = `ارسال کد مجدد(${seconds}s)`;  // Update the button text with countdown
+            button.textContent = `ارسال مجدد کد (${seconds} ثانیه)`;  // Update the button text with countdown
             seconds--;
         } else {
             clearInterval(timerInterval);
@@ -88,18 +88,3 @@ function startCountdown(button, seconds) {
 }
 
 
-    // Validate phone number (شماره تلفن)
-    const phoneField = document.getElementById('phone');
-    const phoneValue = phoneField.value;
-    if (!/^\d{11}$/.test(phoneValue)) {
-        showError(phoneField, 'شماره تلفن باید 11 رقمی باشد');
-    } else {
-        // if there is a error message from django message like this phone number exist we change this to true
-        let phoneExists = false;
-
-        if (phoneExists) {
-            showError(phoneField, 'این شماره تلفن قبلا ثبت شده است');
-        } else {
-            resetError(phoneField);
-        }
-    }
