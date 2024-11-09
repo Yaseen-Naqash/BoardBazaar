@@ -71,7 +71,7 @@
                     <a href="create-auc.html" class="button-74">ایجاد مزایده</a>
                     <a href="construction.html" class="button-74">ایجاد فروشگاه</a>
                     <a href="construction.html" class="button-74">واسم یه قهوه بخر</a>
-                    <a href="login.html" class="button-74">خروج</a>
+                    <a href="{% url 'login_url' %}" class="button-74">خروج</a>
                 </div> 
             </div>
             {% else %}
@@ -115,7 +115,7 @@
                         <a href="create-auc.html" class="button-74">ایجاد مزایده</a>
                         <a href="construction.html" class="button-74">ایجاد فروشگاه</a>
                         <a href="construction.html" class="button-74">واسم یه قهوه بخر</a>
-                        <a href="login.html" class="button-74">خروج</a>
+                        <a href="{% url 'login_url' %}" class="button-74">خروج</a>
                     </div> 
                 </div>
                 {% else %}

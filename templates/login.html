@@ -20,12 +20,12 @@
         <h2>وارد شوید!</h2>
         <hr class="line">
     </div>
-    <form action=""></form>
+    <form action="" method="POST">
         {% csrf_token %}
         <div class="login-form">
             
                 <div class="input-field"> 
-                    <input required class="button-74" type="text" spellcheck="false" placeholder=" " autocomplete="off" name="username" style="max-width: 320px;">
+                    <input required class="button-74" type="text" spellcheck="false" placeholder=" " autocomplete="off" name="username-or-username" style="max-width: 320px;">
                     <label>نام کاربری یا شماره تلفن</label>
                 </div>
                 <div class="input-field"> 
@@ -34,7 +34,7 @@
                 </div>
                 <div class="login-buttons">
                     <button type="submit" class="button-74" style="min-width: fit-content;">ورود</button>
-                    <a href="register.html" class="button-74" style="min-width: fit-content;">ثبت نام</a>
+                    <a href="{% url 'register_url' %}" class="button-74" style="min-width: fit-content;">ثبت نام</a>
                 </div>
                 <a class="forgot-pass" href="change_pass.html">رمز عبور رو فراموش کردی؟!</a>
             

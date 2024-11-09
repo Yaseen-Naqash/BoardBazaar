@@ -18,8 +18,25 @@ def landing_page(request):
 
 def login_page(request):
     if request.method == 'POST':
-        phone = request.POST.get('phone')
+        username_or_phone = request.POST.get('username-or-username')
         password = request.POST.get('password')
+        print(username_or_phone)
+        print(password)
+
+
+        try:
+            if username_or_phone.startswith('09') and len(username_or_phone) == 11:
+                user = User.objects.get(phone=username_or_phone, password=password)
+            else:
+                user = User.objects.get(username=username_or_phone, password=password)
+            
+            login(request, user)
+            messages.success(request, 'شما با موفقیت وارد شدید')
+            return redirect('landing_page_url')  # Redirect to the desired page after login
+            
+        except User.DoesNotExist:
+            messages.error(request, 'اطلاعات شما نامعتبر است!')
+
 
     return render(request, 'login.html')
 
