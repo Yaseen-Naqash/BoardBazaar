@@ -62,6 +62,16 @@ class Deal(models.Model):
         ('0','ایرانی'),
         ('1','خارجی'),
     ]
+    DEAL_TYPE = [
+        ('0','فروش'),
+        ('1','خرید'),
+        ('2','مزایده'),
+
+    ]
+    PRICE_METHOD = [
+        ('0','توافقی'),
+        ('1','مشخص'),
+    ]
     isdead = models.BooleanField(default = False)
     title = models.CharField(max_length=127, null=True, blank=True)
     description = models.TextField(max_length=2047, null=True, blank=True)
@@ -71,7 +81,8 @@ class Deal(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     manufacturing = models.CharField(default=0, max_length=1, choices=MADE_IN, blank=True, null=True)
-    
+    dealType = models.CharField(default=0, max_length=1, choices=DEAL_TYPE, blank=True, null=True)
+    priceMethod = models.CharField(default=0, max_length=1, choices=PRICE_METHOD, blank=True, null=True)
     #comments = models.TextField(max_length=500,null=True,blank=True)
 
     class Meta:
@@ -86,8 +97,8 @@ class Deal(models.Model):
 
 class Boardgame(models.Model):
     STATUS = [
-        ('0','برای فروش'),
-        ('1','فروخته شد'),
+        ('0','موجود'),
+        ('1','نا موجود'),
         ('2','نامشخص'),
     ]
     deal = models.ForeignKey(Deal, on_delete=models.CASCADE, null=True, blank=True, related_name='boardgames')

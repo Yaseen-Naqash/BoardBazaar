@@ -211,14 +211,18 @@ document.querySelectorAll('form').forEach(form => {
 // add new game 
 let boardgameCount = 1;
 const MAX_BOARDGAMES = 10;
-
 function addBoardGame() {
     if (boardgameCount >= MAX_BOARDGAMES) {
         alert('امکان ثبت بیش از 10 بازی در یک آگهی نیست');
         return;
     }
 
-    boardgameCount++; 
+
+    boardgameCount++;
+    // Generate category checkboxes dynamically
+    let categoryCheckboxes = categories.map(category => `
+            <label><input type="checkbox" name="game_category${boardgameCount}" value="${category.name}"> ${category.name}</label>
+        `).join('');
     const boardgamesDiv = document.getElementById('create-games-wrapper');
     const newDiv = document.createElement('div');
     newDiv.classList.add('middle-align');
@@ -240,9 +244,7 @@ function addBoardGame() {
           <div class="selected-options"></div>
         </div>
         <div class="dropdown-options">
-          <label><input type="checkbox" name="game_category${boardgameCount}" value="war"> جنگی</label>
-          <label><input type="checkbox" name="game_category${boardgameCount}" value="farming"> فارمینگ</label>
-          <label><input type="checkbox" name="game_category${boardgameCount}" value="card"> کارتی</label>
+            ${categoryCheckboxes}
         </div>
     </div>
     <fieldset>
@@ -267,7 +269,7 @@ function addBoardGame() {
     </div>
     `;
     boardgamesDiv.appendChild(newDiv);
-
+    document.getElementById('boardgameCountdata').value = boardgameCount;
     // Reapply the comma format event listener to all inputs
     reapplyCommaAddListeners();
     addInputListeners();
@@ -357,9 +359,9 @@ function toggleColors() {
             if (img.src.includes('no-image.jpg')) {
                 // Toggle image source based on current color state
                 if (isRedColor) {
-                    img.src = 'images/blue-no-image.jpg';
+                    img.src = '../static/images/blue-no-image.jpg';
                 } else {
-                    img.src = 'images/no-image.jpg';
+                    img.src = '../static/images/no-image.jpg';
                 }
             }
         });
@@ -410,15 +412,19 @@ let totalGamePrice = 0;
         }
 
         if (dealPriceCheck.checked) {
-            toman.textContent = ' توافقی'
-            dealPrice.textContent = ''
-        }else{
             toman.textContent = ' تومان '
             var temp = totalGamePrice;
             temp = temp.toString();
             
             temp = temp.replace(/\B(?=(\d{3})+(?!\d))/g, ',');
             dealPrice.textContent = temp
+
+
+        }else{
+
+            toman.textContent = ' توافقی'
+            dealPrice.textContent = ''
+
         }
 
         if (dealForeign.checked) {

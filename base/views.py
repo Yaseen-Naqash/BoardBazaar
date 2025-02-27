@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from .models import PhoneVerification, User
+from .models import PhoneVerification, User, Deal, Boardgame, City, Category, DealImage
 from django.utils import timezone
 import json
 from django.http import JsonResponse
@@ -18,7 +18,7 @@ def landing_page(request):
 
 def login_page(request):
     if request.method == 'POST':
-        username_or_phone = request.POST.get('username-or-username')
+        username_or_phone = request.POST.get('username-or-phone')
         password = request.POST.get('password')
         print(username_or_phone)
         print(password)
@@ -103,14 +103,6 @@ def logout_command(request):
     logout(request)
     return redirect('login_url')
 
-
-
-
-
-
-
-
-
 def generate_verification_code(phone_number):
     verification = PhoneVerification(phone_number=phone_number)
     verification.generate_code()
@@ -132,9 +124,9 @@ def verify_code(phone_number, code):
         return True
     else:
         return False
-    
-
+   
 def send_code(request):
+
 
     if request.method == 'POST':
         data = json.loads(request.body)
@@ -142,7 +134,7 @@ def send_code(request):
         
         if not re.match(r'^09\d{9}$', phone_number):
             return JsonResponse({'success': False, 'error': 'Invalid phone number'})
-
+ 
         
         # Your logic for sending the verification code goes here
         code = generate_verification_code(phone_number)
@@ -155,3 +147,87 @@ def send_code(request):
             return JsonResponse({'success': False, 'error': 'Invalid phone number'})
 
     return JsonResponse({'success': False, 'error': 'Invalid request'})
+
+
+def create_deal(request):
+    if request.method == "POST":
+        # Create Deal instance
+        title = request.POST.get('deal-titr')
+        description = request.POST.get('deal-description')
+        city_name = request.POST.get('deal-city')
+        manufacturing = request.POST.get('deal-manufacturing')
+        deal_type = request.POST.get('deal-type')
+        price_method = request.POST.get('deal-price-method')
+        total_price = request.POST.get('deal-price-set')
+        
+
+        if deal_type == '':
+            deal_type = 0
+
+        if manufacturing == 'foreign':
+            manufacturing = 1
+        else :
+            manufacturing = 0
+
+        if price_method == 'agreement':
+            price_method = 0
+        else :
+            price_method = 1
+        
+        if price_method == 0:
+            total_price == 0
+
+        city = City.objects.get(name=city_name)
+        # Save Deal object
+        deal = Deal.objects.create(
+            title=title,
+            description=description,
+            location=city,
+            manufacturing=manufacturing,
+            totalPrice=total_price,
+        )
+
+        # Handle board games
+        boardgame_count = int(request.POST.get('boardgameCount', 0))
+        for i in range(1, boardgame_count + 1):
+            name = request.POST.get(f'game_name{i}')
+            price = request.POST.get(f'game_price{i}')
+            status = request.POST.get(f'game-status{i}')
+            category_ids = request.POST.getlist(f'game_category{i}')
+            print (status)
+            if status == 'instock':
+                status = 0
+            elif status == 'outstock':
+                status = 1
+            else:
+                status = 2
+            # Create Boardgame instance
+            boardgame = Boardgame.objects.create(
+                deal=deal,
+                name=name,
+                price=price,
+                status=status,
+            )
+            # Add selected categories
+            categories = Category.objects.filter(name__in=category_ids)
+            boardgame.categories.set(categories)
+
+        # Handle uploaded images
+        for uploaded_file in request.FILES.getlist('deal-pictures'):
+            DealImage.objects.create(deal=deal, deal_image=uploaded_file)
+
+        
+
+
+
+
+
+
+    cities = City.objects.all()
+    categories = Category.objects.all()
+    categories_data = Category.objects.all().values('name')
+    categories_json = json.dumps(list(categories_data))  # Convert queryset to list of dicts
+    city_pattern = '|'.join(city.name for city in cities)
+    context = {'city_pattern' : city_pattern, 'cities' : cities, 'categories_json' : categories_json, 'categories' : categories}
+    return render(request, 'create.html', context)
+
